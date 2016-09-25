@@ -10,7 +10,7 @@ Julia, you're encouraged to read more about it at the link below:
 http://docs.julialang.org/en/release-0.5/manual/metaprogramming/
 """
 
-module Helpers
+module Utils
 
 export @mma_function, demean
 
