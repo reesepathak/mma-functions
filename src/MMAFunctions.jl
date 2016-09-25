@@ -30,6 +30,6 @@ export avg, std, rms, angle, corrcoef, dist
 @mma_function angle(x, y) = acos(dot(x,y)/(norm(x)*norm(y)))
 
 # Correlation coefficient
-@mma_function corrcoef(x, y) = cos(angle(demean(x), demean(y)))
+@mma_function corrcoef(x, y) = dot(demean(x), demean(y))/norm(demean(x))*norm(demean(y))
 
 end
