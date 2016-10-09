@@ -32,7 +32,7 @@ function k_means(list_of_vectors; k=2, epsilon=1e-6)
     assignments = partition_data(list_of_vectors, representatives)
     representatives = update_representatives(list_of_vectors, assignments,
                                               k, representatives)
-    push!(losses, loss(list_of_vectors, representatives, assignments))
+    push!([losses], loss(list_of_vectors, representatives, assignments))
    end
   return representatives, assignments, losses
 end
