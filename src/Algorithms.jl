@@ -1,8 +1,9 @@
 include("Utils.jl")
-
+include("Kmeans.jl")
 module Algorithms
-using Utils
-export nearest_neighbor, gram_schmidt
+  using Utils
+  using K_means
+export nearest_neighbor, gram_schmidt, k_means
 
 function gram_schmidt(vector_list)
   epsilon = 1e-6
@@ -48,5 +49,4 @@ function nearest_neighbor(query, vector_list)
   println("Index: $(min_index) \t Vector: $(min_vector) \t Distance: $(min_dist)")
   return min_vector
 end
-
 end

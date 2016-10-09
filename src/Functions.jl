@@ -1,4 +1,5 @@
 include("Utils.jl")
+
 """
 File: MMAFunctions.jl
 Authors: Reese Pathak, Stephen Boyd
@@ -7,8 +8,9 @@ This file defines a set of scalar-valued functions that take one or two vectors
 as input and output a scalar as output. We support average, standard deviation,
 root mean square, angle, distance, and correlation coefficient.
 """
+
 module Functions
-using Utils
+  using Utils
 export avg, std, rms, angle, corrcoef, dist
 
 
