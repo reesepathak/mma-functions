@@ -34,7 +34,7 @@ function k_means(list_of_vectors; k=2, epsilon=1e-6)
                                               k, representatives)
     push!(losses, loss(list_of_vectors, representatives, assignments))
    end
-  return representatives, labels, losses
+  return representatives, assignments, losses
 end
 
 function has_not_converged(losses, epsilon)
