@@ -28,7 +28,7 @@ function k_means(list_of_vectors; k=2, epsilon=1e-6)
   losses = Float64[] # array of losses
   # initialize representatives and assignments
   representatives, assignments = initialize_representatives(list_of_vectors, k)
-  while !has_not_converged(losses, epsilon)
+  while has_not_converged(losses, epsilon)
     assignments = partition_data(list_of_vectors, representatives)
     representatives = update_representatives(list_of_vectors, assignments,
                                               k, representatives)
@@ -38,7 +38,7 @@ function k_means(list_of_vectors; k=2, epsilon=1e-6)
 end
 
 function has_not_converged(losses, epsilon)
-  return (length(losses) >= 2  && abs(losses[end] - losses[end-1]) <= epsilon)
+  return !(length(losses) >= 2  && abs(losses[end] - losses[end-1]) <= epsilon)
 end
 # Assigns each data point to the closest representative
 function partition_data(data, representatives)
